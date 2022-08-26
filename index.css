@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+.wrapper {
+    margin: 0 auto;
+    max-width: 80vw;
+}
+.dates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dates__item {
+    max-width: 60px;
+    padding: 10px;
+    margin-right: 20px;
+}
+.dates__item:last-child {
+    margin-right: 0;
+}
+
+.dates__item.today {
+    background: blue;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movies__item {
+    display: flex;
+    min-width: 500px;
+    flex: 1;
+}
+
+.movies__item-poster {
+    width: 200px;
+    height: 200px;
+}
+
+.movies__item-info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.room {
+    display: flex
+}
+.room.hidden {
+    display: none;
+}
+.room-rows {
+
+}
