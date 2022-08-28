@@ -1,6 +1,19 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    border: none;
+    background: none;
 }
+body.popup{
+    overflow: hidden;
+}
+button {
+    cursor: pointer;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+
 .wrapper {
     margin: 0 auto;
     max-width: 80vw;
@@ -21,37 +34,187 @@
 }
 
 .dates__item.today {
-    background: blue;
+    background: #00ffbb;
 }
-
+.dates__item.active {
+    background: #00ff0d;
+}
+.dates__item.archive {
+    background: rgba(71, 85, 93, 0.3);
+    color: white;
+}
 .movies {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
-
+.movies__title {
+    margin-top: 24px;
+    text-align: center;
+}
 .movies__item {
     display: flex;
-    min-width: 500px;
-    flex: 1;
+    width: 49%;
+    margin-top: 32px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
 }
 
 .movies__item-poster {
-    width: 200px;
-    height: 200px;
+    width: 50%;
+    border-radius: 16px;
 }
 
 .movies__item-info {
     margin-left: 20px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
+}
+.movies__item-room {
+    margin-top: 20px;
+}
+.movies__item-sessions {
+    margin-top: 20px;
+}
+.movies__item-times {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.movies__item-time {
+    width: 32%;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+.movies__item-time.chosen {
+    background: yellow;
+}
+
+.movies__item-choose-seats {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background: #00ff0d;
+    font-weight: 700;
+}
+.movies__item-choose-seats:disabled {
+    background: gray;
+    color: white;
+}
+
+.rooms {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: auto;
 }
 
 .room {
-    display: flex
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-35%);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
 }
-.room.hidden {
-    display: none;
+.room-movie-name {
+    text-align: center;
+}
+.room-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.room-title {
+    margin: 0 auto;
+}
+.room-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}
+.room-close > img {
+    width: 100%;
+}
+.room-screen {
+    padding: 10px;
+    border: 2px solid black;
+    border-bottom: none;
+    text-align: center;
+    margin: 20px 0;
 }
 .room-rows {
 
+}
+.room-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+.room-row-number {
+    width: 60px;
+}
+.room-seats {
+    display: flex;
+    margin: 0 20px;
+}
+.room-seat {
+    margin-left: 4px;
+    background: #01da3d;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+}
+.room-seat.chosen {
+    background: yellow;
+}
+.room-seat.reserved {
+    background: red;
+}
+.room-colors {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.room-color {
+    position: relative;
+    margin-left: 32px;
+}
+.room-color:before {
+    position: absolute;
+    top: 2px;
+    left: -24px;
+    content: "";
+    background: #01da3d;
+    width: 16px;
+    height: 16px;
+}
+.room-color.reserved:before{
+    background: red;
+}
+
+.room-submit {
+    margin: 20px auto 0;
+    font-size: 24px;
+    background: #01da3d;
+    padding: 16px;
+    border-radius: 100px;
+}
+.hidden {
+    display: none;
 }
