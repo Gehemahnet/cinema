@@ -289,7 +289,7 @@ function submitOrder(e) {
     } else {
         localStorage.setItem("cinema", JSON.stringify(data))
     }
-
+    hideSeats()
 }
 
 
